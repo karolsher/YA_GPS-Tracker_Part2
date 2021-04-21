@@ -18,7 +18,16 @@
 
     </div>
 
-    <script src="test.js"></script>
+     <script>
+        fetch("../../static/js/data.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                document.querySelector("#output1").innerText = "Customer: " + data.customer
+                document.querySelector("#output2").innerText = "Firmware: " + data.firmware
+                document.querySelector("#output3").innerText = "Unittest: " + data.unittest
+            })
+    </script>
 
 </body>
 </html>
