@@ -1,0 +1,7 @@
+{
+    "customer" : "GPS-Tracker",
+    "firmware" : "1.001",
+    "unittest" : "95",
+    "integrationtest" : "87",
+    "performancetest" : "100"
+}
