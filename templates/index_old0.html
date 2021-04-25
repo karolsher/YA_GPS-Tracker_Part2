@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DashBoard</title>
+
+    <!--<link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div id="container">
+
+        <ul style="list-style-type:none;">
+            <li id="output1"></li>
+            <li id="output2"></li>
+            <li id="output3"></li>
+        </ul>
+
+    </div>
+
+     <script>
+        fetch("../../static/js/data.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                document.querySelector("#output1").innerText = "Customer: " + data.customer
+                document.querySelector("#output2").innerText = "Firmware: " + data.firmware
+                document.querySelector("#output3").innerText = "Unittest: " + data.unittest
+            })
+    </script>
+
+</body>
+</html>

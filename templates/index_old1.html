@@ -75,15 +75,16 @@
     <body>
      
         <h1>Dashboard</h1>
-        <b style="color:rgb(48, 163, 165)";><strong>
-        Customer ID: </strong></b><b style="color:rgb(130, 132, 135)";><strong id="output1";></strong>
+        <b style="color:rgb(48, 163, 165);"><strong>
+        Customer ID: </strong></b><b style="color:rgb(130, 132, 135);"><strong>GPS-Tracker Enterprise</strong>
         </b><br><br>
         <b style="color:rgb(48, 163, 165);"><strong>
-        Firmware Number: </strong><strong><b style="color:rgb(130, 132, 135)"; id="output2";></b></strong><br>
+            <!--Added line for output2 (firmware number) - not working: displays nothing atm-->
+        Firmware Number: </strong><strong><b id="output2"; style="color:rgb(130, 132, 135)";></b></strong><br>
         <!--<button onclick="">Release/Reject should be connected to controls for "update" option-->
       
         <div class="dropdown";>
-            <button onclick="myFunction()"; class="dropbtn"; style="position:relative; left:370%";>Release New Firmware</button>
+            <button onclick="myFunction()"; class="dropbtn"; style="position:relative; left:370%;">Release New Firmware</button>
             <div id="myDropdown"; class="dropdown-content";>
                 <a href="#">Release</a>
                 <a href="#">Reject</a>
@@ -116,21 +117,22 @@
             <tr><td><b>Performance Test</b></td><td id="output5"></td></tr>
             <br>
         </table>
+        <!--Added elements for every option available option - not working: displays nothing atm-->
         <script>
             fetch("../../static/js/data.json")
             .then(response => response.json())
             .then(data=>{
-                console.log(data)
-                document.querySelector("#output1").innerText=data.customer;
-                document.querySelector("#output2").innerText=data.firmware;
-                document.querySelector("#output3").innerText=data.unittest;
-                document.querySelector("#output4").innerText=data.integrationtest;
-                document.querySelector("#output5").innerText=data.performancetest;
-              //document.querySelector("#output6").innerText="release:"+data.release;
+                // console.log(data)
+                // document.querySelector("#output1").innerText = data.customer;
+                // document.querySelector("#output2").innerText= data.firmware;
+                document.querySelector("#output3").innerText = data.unittest;
+                document.querySelector("#output4").innerText = data.integrationtest;
+                document.querySelector("#output5").innerText = data.performancetest;
+                // document.querySelector("#output6").innerText= data.release;
             })
         </script>
         <!--Optional - at bottom provide adress and or contact info, copyright info etc-->
-        <footer> 
+        <footer>
              <address><cursive>Team 1: Software Tester Project Work</cursive></address> 
         </footer>
     </body>
