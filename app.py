@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-  # Didier makes a API here
+# Didier makes a API here
 @app.route('/api/v1/firmware', methods=['GET'])
 def api_all():
   SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
@@ -15,7 +15,7 @@ def api_all():
   data = json.load(open(json_url))
   return jsonify(data)
 
-  # Didier sends mail to client
+# Didier sends mail to client
 
 if __name__ == '__main__':
   port = int(os.environ.get('PORT', 5000))
