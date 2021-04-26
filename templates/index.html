@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>GPS Tracker - Dashboard</title>
+        <link rel="shortcut icon" href="#">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--responsive resizing-->
         <!--Not working atm: <link rel="stylesheet" href="../static/css/style.css">-->
@@ -113,22 +114,25 @@
             <br><br>
             <tr><td><b>Integration Test</b</td><td id="output4"></td></tr>
             <br><br>
-            <tr><td>Release Satisfaction Index<b></b></td><td id="output5">%qew</td></tr>
+            <tr><td>Release Satisfaction Index<b></b></td><td id="output5"></td></tr>
             <br>
         </table>
+        
         <script>
             fetch("../../static/js/data.json")
             .then(response => response.json())
             .then(data=>{
                 console.log(data)
-                document.querySelector("#output1").innerText=data.customer;
-                document.querySelector("#output2").innerText=data.firmware;
-                document.querySelector("#output3").innerText=data.unittest;
-                document.querySelector("#output4").innerText=data.integrationtest;
-                document.querySelector("#output5").innerText=data.performancetest;
+                data = data[0]
+                document.querySelector("#output1").innerText = data.customer;
+                document.querySelector("#output2").innerText = data.firmware;
+                document.querySelector("#output3").innerText = data.unittest;
+                document.querySelector("#output4").innerText = data.integrationtest;
+                document.querySelector("#output5").innerText = data.performancetest;
               //document.querySelector("#output6").innerText="release:"+data.release;
             })
         </script>
+
         <!--Optional - at bottom provide adress and or contact info, copyright info etc-->
         <footer> 
              <address><cursive>Team 1: Software Tester Project Work</cursive></address>

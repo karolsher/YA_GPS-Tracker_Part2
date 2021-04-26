@@ -19,7 +19,7 @@ FONT = pygame.font.Font('assets/LCDMN___.TTF', 30)
 FPS = 60
 clock = pygame.time.Clock()
 FIRMWARE_Version = '0.000'
-FIRMWARE_Version_Downloaded = '0.002'
+FIRMWARE_Version_Downloaded = '0.000'
 S = Semaphore(16)
 json_data = {} # ??
 updated = False
@@ -49,6 +49,7 @@ def save_local_json(txtIn):
 def get_api_json():
     #myJson = requests.get('https://ya-gps-tracker.herokuapp.com/api/v1/firmware') # Production Stage 1
     myJson = requests.get('http://localhost:5000/api/v1/firmware') # Develop
+    # print("myJson: ", myJson.json())
     for i in myJson.json():
         tmp_str = i['firmware']
     jh.json_ver_memory2(tmp_str)
