@@ -7,7 +7,6 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-# Didier makes a API here
 @app.route('/api/v1/firmware', methods=['GET'])
 def api_all():
   SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
