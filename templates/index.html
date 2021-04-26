@@ -128,7 +128,8 @@
                 document.querySelector("#output2").innerText = data.firmware;
                 document.querySelector("#output3").innerText = data.unittest + '%';
                 document.querySelector("#output4").innerText = data.integrationtest + '%';
-                document.querySelector("#output5").innerText = data.performancetest + '%';
+                const relese_index = (parseInt(data.unittest) + parseInt(data.integrationtest)) / 2;
+                document.querySelector("#output5").innerText = relese_index + '%';
               //document.querySelector("#output6").innerText="release:"+data.release;
             })
         </script>
