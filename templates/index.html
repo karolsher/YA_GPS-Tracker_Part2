@@ -117,7 +117,7 @@
             <tr><td>Release Satisfaction Index<b></b></td><td id="output5"></td></tr>
             <br>
         </table>
-        
+
         <script>
             fetch("../../static/js/data.json")
             .then(response => response.json())
@@ -126,9 +126,9 @@
                 data = data[0]
                 document.querySelector("#output1").innerText = data.customer;
                 document.querySelector("#output2").innerText = data.firmware;
-                document.querySelector("#output3").innerText = data.unittest;
-                document.querySelector("#output4").innerText = data.integrationtest;
-                document.querySelector("#output5").innerText = data.performancetest;
+                document.querySelector("#output3").innerText = data.unittest + '%';
+                document.querySelector("#output4").innerText = data.integrationtest + '%';
+                document.querySelector("#output5").innerText = data.performancetest + '%';
               //document.querySelector("#output6").innerText="release:"+data.release;
             })
         </script>
