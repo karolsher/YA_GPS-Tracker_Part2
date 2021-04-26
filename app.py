@@ -14,7 +14,7 @@ def api_all():
   data = json.load(open(json_url))
   return jsonify(data)
 
-# Didier sends mail to client
+# Mail to client
 
 if __name__ == '__main__':
   port = int(os.environ.get('PORT', 5000))
