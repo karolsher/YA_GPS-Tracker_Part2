@@ -47,8 +47,8 @@ def save_local_json(txtIn):
         json.dump(data, write_json)
 
 def get_api_json():
-    #myJson = requests.get('https://ya-gps-tracker.herokuapp.com/api/v1/firmware') # Production Stage 1
-    myJson = requests.get('http://localhost:5000/api/v1/firmware') # Develop
+    myJson = requests.get('https://ya-gps-tracker.herokuapp.com/api/v1/firmware') # Production Stage 1
+    #myJson = requests.get('http://localhost:5000/api/v1/firmware') # Develop
     for i in myJson.json():
         tmp_str = i['firmware']
     jh.json_ver_memory2(tmp_str)
