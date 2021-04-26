@@ -47,8 +47,8 @@ def save_local_json(txtIn):
         json.dump(data, write_json)
 
 def get_api_json():
-    myJson = requests.get('https://ya-gps-tracker.herokuapp.com/api/v1/firmware') # Production Stage 1
-    #myJson = requests.get('http://localhost:5000/api/v1/firmware') # Develop
+    #myJson = requests.get('https://ya-gps-tracker.herokuapp.com/api/v1/firmware') # Production Stage 1
+    myJson = requests.get('http://localhost:5000/api/v1/firmware') # Develop
     for i in myJson.json():
         tmp_str = i['firmware']
     jh.json_ver_memory2(tmp_str)
@@ -99,13 +99,13 @@ def loading_firmware():
                 txt = FONT.render(loading_str1 + loading_str2, True, (0,0,0))
                 SCREEN.blit(txt, Txtpos_List[5])
                 pygame.display.update()
-                pygame.time.delay(100)
+                pygame.time.delay(200)
         else:
             for i in range(0, 12):
                 txt = FONT.render('NO NEW FIRMWARE AVAILABLE', True, (0,0,0))
                 SCREEN.blit(txt, Txtpos_List[5])
                 pygame.display.update()
-                pygame.time.delay(150)
+                pygame.time.delay(250)
 
 class json_handler():
     def __init__(self):
