@@ -48,7 +48,7 @@ def save_local_json(txtIn):
 
 def get_api_json():
     ########################################## Change this URL to your own Heroku address #########################
-    myJson = requests.get('https://ya-gps-tracker.herokuapp.com/api/v1/firmware') # Produktion against Heroku
+    myJson = requests.get('https://ya-gps-tracker0011.herokuapp.com/api/v1/firmware') # Produktion against Heroku
     #myJson = requests.get('http://localhost:5000/api/v1/firmware') # Develop on local machine
     for i in myJson.json():
         tmp_str = i['firmware']
