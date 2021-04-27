@@ -1,10 +1,10 @@
 [
     {
         "customer": "GPS-Tracker",
-        "firmware": "1.111",
+        "firmware": "1.000",
         "unittest": "100",
         "integrationtest": "90",
-        "performancetest": "93",
+        "performancetest": "00",
         "release": "false"
     }
 ]
