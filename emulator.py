@@ -95,7 +95,6 @@ def loading_firmware():
             loading_str2 = "@"
             jh.json_ver_memory1(FIRMWARE_Version_Downloaded)
             for i in range(0, 12):
-                # loading_str2.append('X')
                 loading_str2 += '@'
                 txt = FONT.render(loading_str1 + loading_str2, True, (0,0,0))
                 SCREEN.blit(txt, Txtpos_List[5])
@@ -106,7 +105,7 @@ def loading_firmware():
                 txt = FONT.render('NO NEW FIRMWARE AVAILABLE', True, (0,0,0))
                 SCREEN.blit(txt, Txtpos_List[5])
                 pygame.display.update()
-                pygame.time.delay(250)
+                pygame.time.delay(300)
 
 class json_handler():
     def __init__(self):
